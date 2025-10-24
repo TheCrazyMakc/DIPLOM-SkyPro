@@ -1,5 +1,7 @@
 import allure
 from pages2.Main_page_ui import BasePage 
+from pages2.Search_by_name_ui import SearchPage 
+from pages2.Add_to_cart_ui import AddCart 
 from time import sleep
 
 def open_page():
@@ -29,6 +31,10 @@ def open_page():
         # Закрытие браузера
         driver.quit()
         print("Браузер закрыт")
+
+
+# def search_name():
+    
 
 
 if __name__ == "__main__":
