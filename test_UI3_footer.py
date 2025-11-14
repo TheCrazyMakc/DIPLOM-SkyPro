@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 
-def open_page():
+def test_open_page():
     """Запускающая функция для тестирования класса Footer"""
     # Инициализация драйвера
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -45,4 +45,4 @@ def open_page():
 
 # Запуск теста
 if __name__ == "__main__":
-    open_page()
+    test_open_page()

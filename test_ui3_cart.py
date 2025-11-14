@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 
-def open_page():
+def test_open_page():
     """Запускающая функция для тестирования класса AddToCart"""
     # Инициализация драйвера
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -70,4 +70,4 @@ def open_page():
 
 if __name__ == "__main__":
     print("🚀 Запуск основного теста...")
-    open_page()
+    test_open_page()

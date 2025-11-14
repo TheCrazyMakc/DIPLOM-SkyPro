@@ -4,7 +4,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
 
-def open_page():
+def test_open_page():
     """Запускающая функция для тестирования класса BasePage"""
     # Инициализация драйвера
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
@@ -42,7 +42,7 @@ def open_page():
             print("❌ Не удалось дождаться результатов поиска")
             
         # Добавляем задержку перед закрытием
-        sleep(8)
+        sleep(2)
         
     except Exception as e:
         print(f"❌ Произошла ошибка: {e}")
@@ -56,4 +56,4 @@ def open_page():
 if __name__ == "__main__":
     # Запуск основного теста
     print("🚀 Запуск основного теста...")
-    open_page()
+    test_open_page()
