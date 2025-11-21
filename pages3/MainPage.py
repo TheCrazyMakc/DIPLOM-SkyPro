@@ -21,32 +21,14 @@ class BasePage:
         """Открывает страницу"""
         self.driver.get(self.url)
         self.close_popup()
-        return self
     
     def close_popup(self):
-        """Закрывает всплывающее окно, если оно появилось"""
-        try:
-            # Ждем появления всплывающего окна
-            popup = self.wait.until(
-                EC.visibility_of_element_located(self.popup_locator)
-            )
-            
-            # Ищем кнопку внутри всплывающего окна
-            close_button = popup.find_element(*self.close_button_locator)
-            
-            # Нажимаем кнопку
-            close_button.click()
-            
-            # Ждем исчезновения всплывающего окна
-            self.wait.until(
-                EC.invisibility_of_element_located(self.popup_locator)
-            )
-            
-            print("✅ Всплывающее окно успешно закрыто")
-            return self
+        """Закрывает всплывающее окно"""
+        popup = WebDriverWait(self.driver, 3).until(
+            EC.visibility_of_element_located(self.popup_locator)
+        )
+        popup.find_element(*self.close_button_locator).click()
         
-        except Exception as e:
-            print(f"Всплывающее окно не появилось или не удалось закрыть: {e}")
 
     def find_element(self, locator):
         """Находит элемент на странице"""
